@@ -14,7 +14,7 @@ public abstract class Task {
     private LocalDateTime dateTime;
     private String description;
 
-    public Task(String title, Type type, LocalDateTime dateTime, String description) {
+    public Task(String title, String description, Type type, LocalDateTime dateTime) {
         this.title = title;
         this.type = type;
         this.dateTime = dateTime;
