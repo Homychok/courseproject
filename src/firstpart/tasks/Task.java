@@ -1,6 +1,7 @@
 package firstpart.tasks;
 
 import firstpart.constants.Type;
+import firstpart.exeptions.IncorrectArgumentException;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -25,7 +26,7 @@ public abstract class Task {
         this.type = task.getType();
         this.dateTime = task.getDateTime();
         this.description = task.getDescription();
-        this.id = id;
+        this.id = idGenerator;
     }
 
     public String getTitle() {
@@ -37,10 +38,11 @@ public abstract class Task {
     }
 
     public Integer getId() {
-        for (int i = 0; i < 100; i++) {
-            idGenerator = i++;
-            id = idGenerator;
-        }
+//        for (int i=0; i > 0; i = i+1) {
+////            idGenerator = i;
+//            id += i;
+//            i = i + 1;
+//        }
         return id;
     }
 
@@ -53,12 +55,18 @@ public abstract class Task {
     }
 
     public void setTitle(String title) {
+
+        if (title == null || title.isEmpty() || title.isBlank()) {
+            IncorrectArgumentException incorrectArgumentException = new IncorrectArgumentException("Введите верное название");
+            System.out.println(incorrectArgumentException.getArgument());;
+        }
         this.title = title;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -70,7 +78,7 @@ public abstract class Task {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTitle(), getType(), getId(), getDateTime(), getDescription());
+        return Objects.hash(getTitle(), getType(), idGenerator, getId(), getDateTime(), getDescription());
     }
 
     @Override

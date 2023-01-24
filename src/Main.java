@@ -22,6 +22,8 @@ public class Main {
         System.out.println(taskService.remove(3));
         System.out.println(taskService.getAllByDate(LocalDate.of(2023, 01, 24)));
         System.out.println(yearlyTask.appearsIn(LocalDate.of(2023,01,01)));
+        System.out.println(monthlyTask);
+        System.out.println(yearlyTask);
 
     }
 

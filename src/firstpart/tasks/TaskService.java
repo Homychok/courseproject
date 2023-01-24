@@ -1,6 +1,7 @@
 package firstpart.tasks;
 
 import firstpart.constants.Type;
+import firstpart.exeptions.TaskNotFoundException;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -12,12 +13,15 @@ public class TaskService {
     private final Collection<Task> removedTasks = new ArrayList<>();
     public void add (Task task) {
         taskMap.put(task.getId(), task);
+        if (tasks == null || tasks.isEmpty()) {
+            new TaskNotFoundException();
+        }
     }
     public Task remove (int id) {
-        Collections.addAll(removedTasks, taskMap.get(id));
-        Task tempTask = taskMap.get(id);
-        taskMap.remove(id);
-        return tempTask;
+       Collections.addAll(removedTasks, taskMap.get(id));
+            Task tempTask = taskMap.get(id);
+            taskMap.remove(id);
+            return tempTask;
     }
     public Collection<Task> getAllByDate(LocalDate localDate) {
         return taskMap.values().stream().filter(task -> task.appearsIn()).collect(Collectors.toList());
