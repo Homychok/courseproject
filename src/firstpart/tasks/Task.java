@@ -84,5 +84,5 @@ public abstract class Task {
                 '}';
     }
 
-    public abstract boolean appearsIn();
+    public boolean appearsIn(){return false;}
 }

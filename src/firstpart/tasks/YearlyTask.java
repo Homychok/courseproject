@@ -10,9 +10,10 @@ public class YearlyTask extends Task{
         super(title,description, type, dateTime);
     }
 
-    @Override
     public boolean appearsIn(LocalDate localDate) {
-        if(LocalDate.now().isAfter(LocalDate.of(2023)))
-        return false;
+        if (localDate.isAfter(LocalDate.of(2023,01,01)) &&
+                localDate.isBefore(LocalDate.of(2023, 12, 31))) {
+            return true;
+        } else return false;
     }
 }

@@ -20,6 +20,7 @@ public class Main {
     taskService.add(yearlyTask);
         System.out.println(taskService.remove(3));
         System.out.println(taskService);
+        System.out.println(yearlyTask.appearsIn());
 
     }
 
