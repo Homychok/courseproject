@@ -12,7 +12,6 @@ public class DailyTask extends Task{
 
     @Override
     public boolean appearsIn() {
-        if (LocalDate.now() &&
         return false;
     }
 }
