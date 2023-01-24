@@ -10,8 +10,8 @@ public class DailyTask extends Task{
         super(title,description, type, dateTime);
     }
 
-    @Override
-    public boolean appearsIn() {
-        return false;
-    }
+    public boolean appearsIn(LocalDate localDate) {
+        if (localDate.getDayOfWeek() == getDateTime().getDayOfWeek() && localDate.isEqual(getDateTime().toLocalDate())) {
+            return true;
+        } else return false;    }
 }

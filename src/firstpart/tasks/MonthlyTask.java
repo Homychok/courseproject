@@ -2,6 +2,7 @@ package firstpart.tasks;
 
 import firstpart.constants.Type;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class MonthlyTask  extends Task{
@@ -9,8 +10,8 @@ public class MonthlyTask  extends Task{
         super(title,description, type, dateTime);
     }
 
-    @Override
-    public boolean appearsIn() {
-        return false;
-    }
+    public boolean appearsIn(LocalDate localDate) {
+        if (localDate.getDayOfMonth() == getDateTime().getDayOfMonth() && localDate.isAfter(getDateTime().toLocalDate())) {
+            return true;
+        } else return false;    }
 }

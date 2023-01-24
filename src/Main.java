@@ -1,5 +1,6 @@
 import firstpart.tasks.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static firstpart.constants.Type.PERSONAL;
@@ -19,8 +20,8 @@ public class Main {
     taskService.add(weeklyTask);
     taskService.add(yearlyTask);
         System.out.println(taskService.remove(3));
-        System.out.println(taskService);
-        System.out.println(yearlyTask.appearsIn());
+        System.out.println(taskService.getAllByDate(LocalDate.of(2023, 01, 24)));
+        System.out.println(yearlyTask.appearsIn(LocalDate.of(2023,01,01)));
 
     }
 

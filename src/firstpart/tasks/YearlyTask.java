@@ -11,9 +11,8 @@ public class YearlyTask extends Task{
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        if (localDate.isAfter(LocalDate.of(2023,01,01)) &&
-                localDate.isBefore(LocalDate.of(2023, 12, 31))) {
-            return true;
+        if (localDate.getDayOfYear() == getDateTime().getDayOfYear() && localDate.isAfter(getDateTime().toLocalDate())) {
+          return true;
         } else return false;
     }
 }
