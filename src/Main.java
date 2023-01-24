@@ -12,5 +12,15 @@ public class Main {
         OneTimeTask oneTimeTask = new OneTimeTask("Завтрак", "Необходимо приготовить утром завтрак", PERSONAL, (LocalDateTime.of(2023, 01,24, 19, 28)));
         WeeklyTask weeklyTask = new WeeklyTask("Уборка", "Необходимо прибрать в квартире", PERSONAL, (LocalDateTime.of(2023, 01,28, 19, 28)) );
         YearlyTask yearlyTask = new YearlyTask("Подарки", "Необходимо купить подарки на Новый Год", PERSONAL, (LocalDateTime.of(2023, 12,01, 12, 00)));
+    TaskService taskService = new TaskService();
+    taskService.add(dailyTask);
+    taskService.add(monthlyTask);
+    taskService.add(oneTimeTask);
+    taskService.add(weeklyTask);
+    taskService.add(yearlyTask);
+        System.out.println(taskService.remove(3));
+        System.out.println(taskService);
+
     }
+
 }

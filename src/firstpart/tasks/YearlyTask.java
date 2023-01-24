@@ -2,6 +2,7 @@ package firstpart.tasks;
 
 import firstpart.constants.Type;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class YearlyTask extends Task{
@@ -10,7 +11,8 @@ public class YearlyTask extends Task{
     }
 
     @Override
-    public boolean appearsIn() {
+    public boolean appearsIn(LocalDate localDate) {
+        if(LocalDate.now().isAfter(LocalDate.of(2023)))
         return false;
     }
 }
