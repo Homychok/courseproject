@@ -1,11 +1,11 @@
-import firstpart.exeptions.TaskNotFoundException;
-import firstpart.tasks.*;
+import firstandsecondparts.exeptions.TaskNotFoundException;
+import firstandsecondparts.tasks.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import static firstpart.constants.Type.PERSONAL;
-import static firstpart.constants.Type.WORK;
+import static firstandsecondparts.constants.Type.PERSONAL;
+import static firstandsecondparts.constants.Type.WORK;
 
 public class Main {
     public static void main(String[] args) throws TaskNotFoundException {

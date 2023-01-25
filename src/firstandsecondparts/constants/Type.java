@@ -1,4 +1,4 @@
-package firstpart.constants;
+package firstandsecondparts.constants;
 
 public enum Type {
     WORK("Рабочая"),

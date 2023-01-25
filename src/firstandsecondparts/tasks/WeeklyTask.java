@@ -1,6 +1,6 @@
-package firstpart.tasks;
+package firstandsecondparts.tasks;
 
-import firstpart.constants.Type;
+import firstandsecondparts.constants.Type;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

@@ -1,9 +1,8 @@
-package firstpart.tasks;
+package firstandsecondparts.tasks;
 
-import firstpart.constants.Type;
-import firstpart.exeptions.IncorrectArgumentException;
+import firstandsecondparts.constants.Type;
+import firstandsecondparts.exeptions.IncorrectArgumentException;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 

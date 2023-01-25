@@ -1,4 +1,4 @@
-package firstpart.exeptions;
+package firstandsecondparts.exeptions;
 
 public class IncorrectArgumentException extends Exception{
     private String argument;
