@@ -11,8 +11,6 @@ public class OneTimeTask extends Task {
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        if (localDate.getDayOfWeek() == getDateTime().getDayOfWeek()) {
-            return true;
-        } else return false;
+       return localDate.getDayOfWeek() == getDateTime().getDayOfWeek()&& localDate.isAfter(getDateTime().toLocalDate());
     }
 }

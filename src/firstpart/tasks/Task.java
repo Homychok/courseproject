@@ -10,7 +10,7 @@ import java.util.Objects;
 public abstract class Task {
     private String title;
     private Type type;
-    private static Integer idGenerator;
+    private static Integer idGenerator = 0;
     private Integer id;
     private LocalDateTime dateTime;
     private String description;
@@ -20,15 +20,8 @@ public abstract class Task {
         this.type = type;
         this.dateTime = dateTime;
         this.description = description;
+        id = ++ idGenerator;
     }
-    public Task(Task task, Integer id) {
-        this.title = task.getTitle();
-        this.type = task.getType();
-        this.dateTime = task.getDateTime();
-        this.description = task.getDescription();
-        this.id = idGenerator;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -38,11 +31,6 @@ public abstract class Task {
     }
 
     public Integer getId() {
-//        for (int i=0; i > 0; i = i+1) {
-////            idGenerator = i;
-//            id += i;
-//            i = i + 1;
-//        }
         return id;
     }
 
@@ -57,9 +45,13 @@ public abstract class Task {
     public void setTitle(String title) {
 
         if (title == null) {
-            new IncorrectArgumentException();
+            try {
+                throw new IncorrectArgumentException();
+            } catch (IncorrectArgumentException e) {
+                throw new RuntimeException(e);
+            }
         } else if (title.isEmpty() || title.isBlank()) {
-            System.out.println("Введите корректное название");
+            System.out.println("Название не может быть пустым. Необходимо ввести корректное название!");
         }
         this.title = title;
     }

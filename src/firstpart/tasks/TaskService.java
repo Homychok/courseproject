@@ -13,13 +13,11 @@ public class TaskService {
     private final Collection<Task> removedTasks = new ArrayList<>();
 
     public void add(Task task) {
-        if (tasks == null || tasks.isEmpty()) {
-            new TaskNotFoundException();
-        }
-        taskMap.put(task.getId(), task);
+        if (tasks != null || !tasks.isEmpty()) {
+            taskMap.put(task.getId(), task); }
     }
 
-    public Task remove(int id) {
+    public Task remove(int id) throws TaskNotFoundException {
         if (taskMap.containsKey(id)) {
 
             Task tempTask = taskMap.get(id);
@@ -28,9 +26,8 @@ public class TaskService {
             taskMap.remove(id);
             return tempTask;
         } else {
-            new TaskNotFoundException();
+            throw new TaskNotFoundException();
         }
-        return null;
     }
 
     public Collection<Task> getAllByDate(LocalDate localDate) {

@@ -11,7 +11,6 @@ public class MonthlyTask  extends Task{
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        if (localDate.getDayOfMonth() == getDateTime().getDayOfMonth() && localDate.isAfter(getDateTime().toLocalDate())) {
-            return true;
-        } else return false;    }
+        return localDate.getDayOfMonth() == getDateTime().getDayOfMonth() && localDate.isAfter(getDateTime().toLocalDate());
+        }
 }

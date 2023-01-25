@@ -1,7 +1,7 @@
 package firstpart.exeptions;
 
 public class IncorrectArgumentException extends Exception{
-    private final String argument;
+    private String argument;
 
     public IncorrectArgumentException() {
         this.argument = argument;

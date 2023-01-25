@@ -1,4 +1,5 @@
 package firstpart.exeptions;
 
-public class TaskNotFoundException extends Exception{
+public class TaskNotFoundException extends Exception {
+
 }

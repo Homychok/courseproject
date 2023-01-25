@@ -1,3 +1,4 @@
+import firstpart.exeptions.TaskNotFoundException;
 import firstpart.tasks.*;
 
 import java.time.LocalDate;
@@ -7,7 +8,7 @@ import static firstpart.constants.Type.PERSONAL;
 import static firstpart.constants.Type.WORK;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TaskNotFoundException {
         DailyTask dailyTask = new DailyTask("Домашнее задание", "Необходимо прослушать лекцию и выполнить ДЗ", WORK, (LocalDateTime.of(2023, 01,25, 9, 00)));
         MonthlyTask monthlyTask = new MonthlyTask("Расписание", "Необходимо составить расписание на месяц", WORK, (LocalDateTime.of(2023, 01,31, 12, 00)));
         OneTimeTask oneTimeTask = new OneTimeTask("Завтрак", "Необходимо приготовить утром завтрак", PERSONAL, (LocalDateTime.of(2023, 01,24, 19, 28)));
@@ -21,7 +22,7 @@ public class Main {
     taskService.add(yearlyTask);
         System.out.println(taskService.remove(3));
         System.out.println(taskService.getAllByDate(LocalDate.of(2023, 01, 24)));
-        System.out.println(yearlyTask.appearsIn(LocalDate.of(2023,01,01)));
+        System.out.println(yearlyTask.appearsIn(LocalDate.of(2023,12,02)));
         System.out.println(monthlyTask);
         System.out.println(yearlyTask);
 
