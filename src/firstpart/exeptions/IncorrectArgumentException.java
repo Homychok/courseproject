@@ -3,7 +3,7 @@ package firstpart.exeptions;
 public class IncorrectArgumentException extends Exception{
     private final String argument;
 
-    public IncorrectArgumentException(String argument) {
+    public IncorrectArgumentException() {
         this.argument = argument;
     }
 

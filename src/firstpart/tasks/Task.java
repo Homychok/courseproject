@@ -10,7 +10,7 @@ import java.util.Objects;
 public abstract class Task {
     private String title;
     private Type type;
-    private Integer idGenerator;
+    private static Integer idGenerator;
     private Integer id;
     private LocalDateTime dateTime;
     private String description;
@@ -56,9 +56,10 @@ public abstract class Task {
 
     public void setTitle(String title) {
 
-        if (title == null || title.isEmpty() || title.isBlank()) {
-            IncorrectArgumentException incorrectArgumentException = new IncorrectArgumentException("Введите верное название");
-            System.out.println(incorrectArgumentException.getArgument());;
+        if (title == null) {
+            new IncorrectArgumentException();
+        } else if (title.isEmpty() || title.isBlank()) {
+            System.out.println("Введите корректное название");
         }
         this.title = title;
     }
