@@ -45,7 +45,7 @@ public class TaskService {
         return taskMap.get(i);
     }
     public Collection<Task> getAllByDate(LocalDate localDate) {
-        return taskMap.values().stream().filter(task -> task.appearsIn()).collect(Collectors.toList());
+        return taskMap.values().stream().filter(task -> task.appearsIn(localDate)).collect(Collectors.toList());
     }
     public Map<LocalDate, List<Task>> getAllGroupByDate() {
 //        if (getAllGroupByDate.containsKey(tasks)) {
