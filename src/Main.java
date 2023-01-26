@@ -25,6 +25,21 @@ public class Main {
         System.out.println(yearlyTask.appearsIn(LocalDate.of(2023,12,02)));
         System.out.println(monthlyTask);
         System.out.println(yearlyTask);
+        System.out.println(taskService.getRemovedTasks());
+        System.out.println(taskService.getAllGroupByDate());
+        taskService.updateDescription(1, "Задача выполнена");
+        try {
+            System.out.println(taskService.remove(9));
+        } catch (TaskNotFoundException e) {
+            System.out.println("Этой задачи не существует!");
+        }
+        try {
+            System.out.println(taskService.remove(8));
+        } catch (TaskNotFoundException e) {
+            System.out.println("Этой задачи не существует!");
+        }
+
+
 
     }
 

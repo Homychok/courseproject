@@ -15,7 +15,7 @@ public abstract class Task {
     private String description;
 
     public Task(String title, String description, Type type, LocalDateTime dateTime) {
-        this.title = title;
+        setTitle(title);
         this.type = type;
         this.dateTime = dateTime;
         this.description = description;
@@ -44,16 +44,17 @@ public abstract class Task {
     public void setTitle(String title) {
 
         if (title == null) {
-            try {
-                throw new IncorrectArgumentException();
-            } catch (IncorrectArgumentException e) {
-                throw new RuntimeException(e);
-            }
-        } else if (title.isEmpty() || title.isBlank()) {
-            System.out.println("Название не может быть пустым. Необходимо ввести корректное название!");
+            throw new IllegalArgumentException("Название не может быть пустым. Необходимо ввести корректное название!");
+//            try {
+//                throw new IncorrectArgumentException("Название не может быть пустым. Необходимо ввести корректное название!");
+//            } catch (IncorrectArgumentException e) {
+//                throw new RuntimeException(e);
+//            }
+//        } else if (title.isEmpty() || title.isBlank()) {
+//            System.out.println("Название не может быть пустым. Необходимо ввести корректное название!");
         }
-        this.title = title;
-    }
+            this.title = title;
+        }
 
     public void setDescription(String description) {
         this.description = description;

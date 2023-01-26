@@ -4,6 +4,7 @@ import firstandsecondparts.constants.Type;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class DailyTask extends Task{
     public DailyTask(String title, String description, Type type, LocalDateTime dateTime) {
@@ -11,6 +12,6 @@ public class DailyTask extends Task{
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        return localDate.getDayOfWeek() == getDateTime().getDayOfWeek() && localDate.isEqual(getDateTime().toLocalDate());
+        return localDate.isAfter(getDateTime().toLocalDate()) ;
     }
 }
