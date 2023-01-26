@@ -3,6 +3,7 @@ package firstandsecondparts.tasks;
 import firstandsecondparts.constants.Type;
 import firstandsecondparts.exeptions.IncorrectArgumentException;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -85,5 +86,5 @@ public abstract class Task {
                 '}';
     }
 
-    public boolean appearsIn(){return false;}
+    public abstract boolean appearsIn(LocalDate localDate);
 }

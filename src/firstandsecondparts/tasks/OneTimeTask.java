@@ -9,8 +9,8 @@ public class OneTimeTask extends Task {
     public OneTimeTask(String title, String description, Type type, LocalDateTime dateTime) {
         super(title,description, type, dateTime);
     }
-
+    @Override
     public boolean appearsIn(LocalDate localDate) {
-       return localDate.getDayOfWeek() == getDateTime().getDayOfWeek()&& localDate.isAfter(getDateTime().toLocalDate());
+       return localDate.isAfter(getDateTime().toLocalDate());
     }
 }
